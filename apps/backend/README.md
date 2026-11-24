@@ -1,3 +1,15 @@
-# Medusa backend seam
+# Tariq Book Depot Medusa Backend
 
-This directory is reserved for the Medusa.js v2 server. It must own catalog, regional pricing, inventory, carts, promotions, shipping, payments, customers, and orders. Add the custom `book-catalog` and `stationery-spec` modules, links, workflows, subscribers, seed script, and Store API routes described in the root specifications before claiming commerce functionality.
+This workspace contains the Medusa.js v2 commerce backend. It owns products, regional PKR pricing, inventory, carts, promotions, shipping, payments, customers, and orders.
+
+## Start
+
+```powershell
+Copy-Item ..\..\.env.example .env
+npm install
+npx medusa db:migrate
+npx medusa exec ./src/scripts/seed-tariq-book-depot.ts
+npm run dev
+```
+
+PostgreSQL and Docker Desktop must be running first. Medusa Admin is served at `http://localhost:9000/app`.
