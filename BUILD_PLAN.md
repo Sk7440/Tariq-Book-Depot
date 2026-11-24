@@ -2,7 +2,7 @@
 
 ## Current scope
 
-This repository starts as an architecture/specification workspace. Milestone 0 establishes a runnable monorepo contract and a storefront foundation with demo data. Medusa, PostgreSQL, payment credentials, real catalog assets, and business policies are external dependencies and are intentionally not fabricated.
+This repository remediates an existing storefront foundation into a live Medusa commerce monorepo. Demonstration products are not valid commerce implementation and must be removed when Medusa APIs are configured.
 
 ## Sequence
 

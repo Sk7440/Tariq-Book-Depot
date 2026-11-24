@@ -1,6 +1,15 @@
 # Implementation status
 
-Updated: 2026-11-23
+Updated: 2026-11-24
+
+## Remediation sprint
+
+- [ ] Node 22 runtime selected and verified.
+- [ ] Docker Desktop and PostgreSQL health verified.
+- [ ] Third-party skill clutter removed.
+- [ ] Medusa backend configured, migrated, seeded, and smoke-tested.
+- [ ] Storefront connected to live Medusa APIs.
+- [ ] Live checkout Playwright verification passed.
 
 ## Milestone 0 — foundation
 
