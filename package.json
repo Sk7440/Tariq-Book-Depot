@@ -16,5 +16,9 @@
     "typecheck": "npm --workspace apps/storefront run typecheck",
     "lint": "npm --workspace apps/storefront run lint",
     "test:e2e": "npm --workspace apps/storefront run test:e2e"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "gsap": "^3.15.1"
   }
 }

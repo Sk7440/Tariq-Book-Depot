@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Search, ShoppingBag } from "lucide-react";
-import { useCart } from "./cart-provider";
+import { Search } from "lucide-react";
+import { CartDrawer } from "./cart-drawer";
 
 export function SiteHeader() {
-  const { count } = useCart();
   return (
     <header className="site-header">
       <div className="header-inner">
@@ -15,16 +14,15 @@ export function SiteHeader() {
         <nav className="main-nav" aria-label="Primary navigation">
           <Link href="/books">Books</Link>
           <Link href="/stationery">Stationery</Link>
-          <Link href="/cart">Cart</Link>
+          <Link href="/books?category=urdu">Urdu Literature</Link>
+          <Link href="/collections/gift-bundles">Bundles</Link>
+          <Link href="/about">About</Link>
         </nav>
         <form className="header-search" action="/books">
           <Search size={17} aria-hidden="true" />
           <input name="q" aria-label="Search books and stationery" placeholder="Search title, author, ISBN or brand" />
         </form>
-        <div className="header-actions">
-          <Link className="icon-button" href="/cart" aria-label={`Cart with ${count} items`}><ShoppingBag size={20} /></Link>
-          {count > 0 && <span className="cart-count" aria-hidden="true">{count}</span>}
-        </div>
+        <CartDrawer />
       </div>
     </header>
   );
