@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Minus, Plus, ShoppingBag, X } from "lucide-react";
 import { useCart } from "./cart-provider";
 import { formatPkr } from "@/lib/catalog";
@@ -44,14 +45,14 @@ export function CartDrawer() {
       <aside ref={panelRef} className="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title">
         <div className="drawer-header"><div><span className="section-kicker">Your selection</span><h2 id="cart-title">Cart</h2></div><button className="icon-button" type="button" aria-label="Close cart" onClick={() => setOpen(false)}><X size={20} /></button></div>
         <div className="drawer-lines">
-          {lines.length === 0 ? <div className="empty-cart"><ShoppingBag size={28} /><p>Your cart is empty.</p><Link className="button secondary" href="/books" onClick={() => setOpen(false)}>Browse books</Link></div> : lines.map((line) => (
+          {lines.length === 0 ? <div className="empty-cart"><ShoppingBag size={28} /><p>Your cart is empty.</p><Link className="button secondary" href="/shop" onClick={() => setOpen(false)}>Browse products</Link></div> : lines.map((line) => (
             <article className="drawer-line" key={line.product.id}>
-              <div className="line-thumb" style={{ background: line.product.accent }}><span>{line.product.title}</span></div>
+              <div className="line-thumb"><Image src={line.product.images[0].url} alt={line.product.images[0].alt} fill sizes="92px" /></div>
               <div className="line-content"><h3>{line.product.title}</h3><p>{line.product.authorOrBrand}</p><strong className="tabular">{formatPkr(line.product.pricePkr)}</strong><div className="quantity"><button type="button" aria-label={`Remove one ${line.product.title}`} onClick={() => update(line.product.id, line.quantity - 1)}><Minus size={14} /></button><span>{line.quantity}</span><button type="button" aria-label={`Add one ${line.product.title}`} onClick={() => update(line.product.id, line.quantity + 1)}><Plus size={14} /></button><button className="remove-line" type="button" onClick={() => remove(line.product.id)}>Remove</button></div></div>
             </article>
           ))}
         </div>
-        {lines.length > 0 && <div className="drawer-footer"><div className="subtotal"><span>Subtotal</span><strong className="tabular">{formatPkr(subtotal)}</strong></div><p>Shipping and final totals are confirmed by the checkout service.</p><Link className="button drawer-checkout" href="/checkout" onClick={() => setOpen(false)}>Proceed to checkout</Link></div>}
+        {lines.length > 0 && <div className="drawer-footer"><div className="subtotal"><span>Estimated item subtotal</span><strong className="tabular">{formatPkr(subtotal)}</strong></div><p>Shipping and the authoritative order total are confirmed by Medusa checkout.</p><Link className="button drawer-checkout" href="/checkout" onClick={() => setOpen(false)}>Proceed to checkout</Link></div>}
       </aside>
     </div>}
   </>;

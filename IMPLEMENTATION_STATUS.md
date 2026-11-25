@@ -1,6 +1,14 @@
 # Implementation status
 
-Updated: 2026-11-24
+Updated: 2026-11-25
+
+## Product catalog ingestion
+
+- [x] Replaced the demo catalog with all 10 products documented under root `Products/`.
+- [x] Copied and normalized all 36 product photos to `apps/storefront/public/products/`.
+- [x] Added product-specific image galleries, exact supplied descriptions, explicit prices, and only source-supported specifications.
+- [x] Added `/shop`, live category collections, predictive product search, and product detail metadata/schema.
+- [ ] Medusa-backed catalog pricing and inventory remain unavailable until the backend is configured. Local catalog prices are not checkout-authoritative.
 
 ## Remediation sprint
 
@@ -13,7 +21,7 @@ Updated: 2026-11-24
 
 ## UI/UX redesign verification
 
-- [x] Homepage editorial hero, trust strip, category arch strip, category-specific cards, curated bundle band, and stationery section implemented.
+- [x] Homepage product spotlight, live category counts, and full sourced catalog implemented.
 - [x] `/books`, `/stationery`, `/collections/[handle]`, `/products/[handle]`, `/cart`, `/checkout`, `/about`, and `/orders/[id]/confirmed` routes created or redesigned.
 - [x] Sticky global header, accessible 2D cart drawer, quantity controls, and 44px interaction targets added.
 - [x] GSAP setup centralized in `src/lib/gsap.ts`; `useGSAP`, `gsap.matchMedia()`, ScrollTrigger, Flip, ScrollToPlugin, CustomEase, and SplitText integration included.
@@ -37,8 +45,8 @@ Updated: 2026-11-24
 ## Milestone 1 — storefront foundation
 
 - [x] Next.js App Router shell and locked tokens created.
-- [x] Homepage, books, stationery, product, cart, and checkout routes created.
-- [x] Accessible demo catalog and client cart behavior created.
+- [x] Homepage, shop, books, stationery, category, product, cart, and checkout routes created.
+- [x] Product catalog sourced from `Products/` and client cart behavior retained.
 - [ ] Live Medusa pricing/inventory/cart checkout: blocked until backend is configured.
 
 ## Verification

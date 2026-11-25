@@ -1,34 +1,34 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import type { DemoProduct } from "@tariq-book-depot/shared-types";
+import type { StoreProduct } from "@tariq-book-depot/shared-types";
 
-type CartLine = { product: DemoProduct; quantity: number };
-type CartContextValue = { lines: CartLine[]; add: (product: DemoProduct) => void; update: (id: string, quantity: number) => void; remove: (id: string) => void; count: number };
+type CartLine = { product: StoreProduct; quantity: number };
+type CartContextValue = { lines: CartLine[]; add: (product: StoreProduct, quantity?: number) => void; update: (id: string, quantity: number) => void; remove: (id: string) => void; count: number };
 const CartContext = createContext<CartContextValue | null>(null);
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [lines, setLines] = useState<CartLine[]>([]);
   useEffect(() => {
-    const saved = window.localStorage.getItem("tbd-demo-cart");
+    const saved = window.localStorage.getItem("tbd-cart");
     if (saved) {
       try {
         setLines(JSON.parse(saved) as CartLine[]);
       } catch {
-        window.localStorage.removeItem("tbd-demo-cart");
+        window.localStorage.removeItem("tbd-cart");
       }
     }
   }, []);
   useEffect(() => {
-    window.localStorage.setItem("tbd-demo-cart", JSON.stringify(lines));
+    window.localStorage.setItem("tbd-cart", JSON.stringify(lines));
   }, [lines]);
   const value = useMemo(() => ({
     lines,
-    add: (product: DemoProduct) => setLines((current) => {
+    add: (product: StoreProduct, quantity = 1) => setLines((current) => {
       const existing = current.find((line) => line.product.id === product.id);
       return existing
-        ? current.map((line) => line.product.id === product.id ? { ...line, quantity: line.quantity + 1 } : line)
-        : [...current, { product, quantity: 1 }];
+        ? current.map((line) => line.product.id === product.id ? { ...line, quantity: line.quantity + quantity } : line)
+        : [...current, { product, quantity }];
     }),
     update: (id: string, quantity: number) => setLines((current) => quantity <= 0
       ? current.filter((line) => line.product.id !== id)

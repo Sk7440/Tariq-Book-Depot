@@ -1,14 +1,28 @@
-import Link from "next/link";
-import { products } from "@/lib/catalog";
+import { notFound } from "next/navigation";
 import { ProductCard } from "@/components/product-card";
+import { getCategory, getProductsInCategory } from "@/lib/catalog";
 
-export default function CollectionPage({ params }: { params: Promise<{ handle: string }> }) {
-  // Server pages await dynamic params in Next.js 15.
-  return <CollectionContent params={params} />;
-}
-
-async function CollectionContent({ params }: { params: Promise<{ handle: string }> }) {
+export default async function CollectionPage({
+  params,
+}: {
+  params: Promise<{ handle: string }>;
+}) {
   const { handle } = await params;
-  const title = handle === "gift-bundles" ? "Gift bundles" : handle.replaceAll("-", " ");
-  return <div className="page-width"><div className="catalog-heading"><div><span className="section-kicker">Curated set</span><h1 className="capitalize">{title}</h1></div></div><div className="product-grid">{products.slice(0, 4).map((product) => <ProductCard key={product.id} product={product} />)}</div><p className="collection-note"><Link className="text-link" href="/books">Continue to the full catalog</Link></p></div>;
+  const category = getCategory(handle);
+  if (!category) notFound();
+  const categoryProducts = getProductsInCategory(handle);
+
+  return (
+    <div className="page-width">
+      <div className="catalog-heading">
+        <div><span className="section-kicker">Product category</span><h1>{category.name}</h1></div>
+        <p>{categoryProducts.length} {categoryProducts.length === 1 ? "product" : "products"}</p>
+      </div>
+      {categoryProducts.length ? (
+        <div className="product-grid catalog-grid">
+          {categoryProducts.map((product) => <ProductCard key={product.id} product={product} />)}
+        </div>
+      ) : <div className="notice">There are no products in this category.</div>}
+    </div>
+  );
 }

@@ -1,37 +1,78 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { products } from "@/lib/catalog";
-import { ProductCard } from "@/components/product-card";
-import { RevealSection } from "@/components/reveal-section";
 import { HeroReveal } from "@/components/hero-reveal";
+import { ProductCard } from "@/components/product-card";
+import { ProductPurchase } from "@/components/product-purchase";
+import { categories, getProductsInCategory, products } from "@/lib/catalog";
+
+const featuredProduct = products[0];
 
 export default function HomePage() {
-  return <div className="page-width">
-    <section className="hero">
-      <HeroReveal><div className="hero-copy">
-        <span className="eyebrow">A considered online bookshop</span>
-        <h1>Make room for a good book.</h1>
-        <p>Discover reading companions and everyday paper goods, presented with the care of a physical bookstore in Lahore.</p>
-        <div className="actions"><Link className="button" href="/books">Browse books <ArrowRight size={17} /></Link><Link className="button secondary" href="/stationery">Shop stationery</Link></div>
-      </div></HeroReveal>
-      <div className="hero-stage" aria-label="Featured book display">
-        <div className="book-stack" aria-hidden="true"><div className="book one"><small>The Book of Maps</small></div><div className="book two"><small>اردو ریڈنگ روم</small></div><div className="book three"><small>A Small Atlas</small></div></div>
-        <div className="quick-buy"><span>Featured title</span><strong>The Book of Maps</strong><small>Demo Editions · Hardcover</small><div><b className="tabular">Rs. 1,850</b><Link className="quick-link" href="/products/the-book-of-maps" aria-label="View The Book of Maps">View <ArrowRight size={14} /></Link></div></div>
-      </div>
-    </section>
-    <section className="trust-strip" aria-label="Store signals"><div className="trust-item">Nationwide Pakistan delivery</div><div className="trust-item">Original editions</div><div className="trust-item">Protective gift packaging</div><div className="trust-item">Cash on delivery available</div></section>
-    <RevealSection className="section category-section">
-      <div className="section-heading"><div><span className="section-kicker">Browse by shelf</span><h2>Find your next good read</h2></div><Link className="text-link" href="/books">View all books</Link></div>
-      <div className="category-arches">{["Fiction","Non-Fiction","Academic","Urdu Literature"].map((name, index) => <Link href="/books" className={`category-arch arch-${index + 1}`} key={name}><span>0{index + 1}</span><strong>{name}</strong></Link>)}</div>
-    </RevealSection>
-    <RevealSection className="section">
-      <div className="section-heading"><div><span className="section-kicker">Selected on the desk</span><h2>Selected for a slower afternoon</h2></div><Link className="text-link" href="/books">See the catalog</Link></div>
-      <div className="product-grid">{products.filter((product) => product.kind === "book").slice(0, 4).map((product) => <ProductCard key={product.id} product={product} />)}</div>
-    </RevealSection>
-    <RevealSection className="section bundle-band"><div><span className="section-kicker">The reading set</span><h2>Pair a novel with something useful.</h2></div><div className="bundle-list">{products.filter((product) => product.kind === "stationery").slice(0, 3).map((product) => <Link className="bundle-item" href={`/products/${product.handle}`} key={product.id}><span style={{ background: product.accent }} /><div><strong>{product.title}</strong><small>{product.specs.join(" · ")}</small></div></Link>)}</div></RevealSection>
-    <RevealSection className="section">
-      <div className="section-heading"><div><span className="section-kicker">On the writing table</span><h2>Paper for the everyday</h2></div><Link className="text-link" href="/stationery">Explore stationery</Link></div>
-      <div className="product-grid">{products.filter((product) => product.kind === "stationery").map((product) => <ProductCard key={product.id} product={product} />)}</div>
-    </RevealSection>
-  </div>;
+  return (
+    <div className="page-width">
+      <section className="hero">
+        <HeroReveal>
+          <div className="hero-copy">
+            <span className="eyebrow">Tariq Book Depot</span>
+            <h1>Useful things for the page and the desk.</h1>
+            <p>Browse paper, pencils and everyday stationery from our Lahore shop.</p>
+            <div className="actions">
+              <Link className="button" href="/shop">Shop all products</Link>
+              <Link className="button secondary" href="/stationery">Browse stationery</Link>
+            </div>
+          </div>
+        </HeroReveal>
+        <div className="hero-product">
+          <Link className="hero-product-image" href={`/products/${featuredProduct.handle}`}>
+            <Image
+              src={featuredProduct.images[0].url}
+              alt={featuredProduct.images[0].alt}
+              fill
+              priority
+              sizes="(max-width: 800px) 100vw, 48vw"
+            />
+          </Link>
+          <div className="hero-product-details">
+            <div>
+              <span className="product-meta">{featuredProduct.category}</span>
+              <h2><Link href={`/products/${featuredProduct.handle}`}>{featuredProduct.title}</Link></h2>
+            </div>
+            <ProductPurchase product={featuredProduct} />
+          </div>
+        </div>
+      </section>
+
+      <section className="section category-section" aria-labelledby="categories-title">
+        <div className="section-heading">
+          <div><h2 id="categories-title">Shop by category</h2></div>
+          <Link className="text-link" href="/shop">View the full catalog</Link>
+        </div>
+        <div className="category-arches">
+          {categories.map((category) => {
+            const count = getProductsInCategory(category.handle).length;
+            return (
+              <Link
+                href={`/collections/${category.handle}`}
+                className="category-arch"
+                key={category.handle}
+              >
+                <span>{count} {count === 1 ? "item" : "items"}</span>
+                <strong>{category.name}</strong>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="catalog-title">
+        <div className="section-heading">
+          <div><h2 id="catalog-title">The catalog</h2></div>
+          <Link className="text-link" href="/shop">Browse all {products.length} products</Link>
+        </div>
+        <div className="product-grid">
+          {products.map((product) => <ProductCard key={product.id} product={product} />)}
+        </div>
+      </section>
+    </div>
+  );
 }
