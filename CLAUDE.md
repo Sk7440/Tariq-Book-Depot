@@ -62,7 +62,7 @@ The approved design is `references/tariq-book-depot.html`. Port it to React; don
 
 **Text file**
 - Exactly one `.txt` per product, UTF-8. CRLF and LF are both accepted.
-- **Title** = line 1. If line 1 is blank, a bullet, or a full sentence (no ` – ` / ` | ` and it ends with `.`), the **product folder name** is used as the title and this is reported.
+- **Title** = line 1. If line 1 is blank or a bullet, the **product folder name** is used. If line 1 is a full sentence (no ` – ` / ` | `, ends with `.`), its subject before " is a/an " is used (e.g. "Dux 12-Inch Scale"), else the folder name; the sentence stays in the description. Every fallback is reported.
 - **Price** = the last line matching `^rs\.?\s*<number>` (case-insensitive). Any text after the number becomes `priceNote`.
 - Lines after the price line (e.g. `Available clrs blck blue`) are kept verbatim as description paragraphs and reported.
 - Lines ending in `:` that introduce bullets (`Features:`, `Key Features:`, `Product Specifications:` …) are headings and are dropped.

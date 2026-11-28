@@ -1,0 +1,540 @@
+[
+  {
+    "id": "blc-paper-rim",
+    "title": "BLC Paper Rim – 70 GSM | 500 Sheets",
+    "name": "BLC Paper Rim",
+    "brand": null,
+    "category": "paper",
+    "price": 1000,
+    "priceNote": null,
+    "description": [
+      "High-quality BLC Paper Rim containing 500 sheets of 70 GSM paper. Ideal for printing, photocopying, office documentation, school assignments, university work and everyday writing.",
+      "Suitable for offices, schools, colleges and businesses."
+    ],
+    "specs": [],
+    "features": [],
+    "images": [
+      "/products/paper/blc-paper-rim/01.jpeg",
+      "/products/paper/blc-paper-rim/02.jpeg"
+    ],
+    "source": "Products/Blc/blc.txt"
+  },
+  {
+    "id": "copy-mate-a4-paper",
+    "title": "Copy Mate A4 Paper – 70 GSM (500 Sheets)",
+    "name": "Copy Mate A4 Paper",
+    "brand": "Copy Mate",
+    "category": "paper",
+    "price": 850,
+    "priceNote": null,
+    "description": [
+      "Get quality and reliability with Copy Mate A4 Paper. Ideal for everyday printing, photocopying, office documentation and educational use."
+    ],
+    "specs": [
+      {
+        "label": "Paper Size",
+        "value": "A4"
+      },
+      {
+        "label": "Paper Weight",
+        "value": "70 GSM"
+      },
+      {
+        "label": "Quantity",
+        "value": "500 Sheets (1 Ream)"
+      },
+      {
+        "label": "Suitable For",
+        "value": "Printing, Photocopying, Office & School Use"
+      }
+    ],
+    "features": [],
+    "images": [
+      "/products/paper/copy-mate-a4-paper/01.jpeg",
+      "/products/paper/copy-mate-a4-paper/02.jpeg",
+      "/products/paper/copy-mate-a4-paper/03.jpeg",
+      "/products/paper/copy-mate-a4-paper/04.jpeg"
+    ],
+    "source": "Products/copymate/copymate.txt"
+  },
+  {
+    "id": "dux-12-inch-scale",
+    "title": "Dux 12-Inch Scale",
+    "name": "Dux 12-Inch Scale",
+    "brand": null,
+    "category": "scales",
+    "price": 80,
+    "priceNote": null,
+    "description": [
+      "Dux 12-Inch Scale is a high-quality and durable measuring ruler, perfect for school, college, office, and everyday stationery use."
+    ],
+    "specs": [],
+    "features": [
+      "12-inch measuring length.",
+      "Clear and easy-to-read measurement markings.",
+      "Durable and lightweight design.",
+      "Suitable for drawing straight lines and measuring.",
+      "Easy to carry and handle.",
+      "Ideal for students, teachers, and office professionals."
+    ],
+    "images": [
+      "/products/scales/dux-12-inch-scale/01.jpeg",
+      "/products/scales/dux-12-inch-scale/02.jpeg"
+    ],
+    "source": "Products/scales/dux/dux.txt"
+  },
+  {
+    "id": "dux-colour-sharpener",
+    "title": "Dux Colour Sharpener – 50 Pieces Box",
+    "name": "Dux Colour Sharpener",
+    "brand": "Dux",
+    "category": "sharpeners",
+    "price": 500,
+    "priceNote": null,
+    "description": [
+      "Dux Colour Sharpener is a useful and colourful stationery essential designed for smooth and easy pencil sharpening. Its practical design helps create a neat pencil point, making it ideal for everyday writing and drawing activities.",
+      "A practical and colourful addition to your everyday stationery collection."
+    ],
+    "specs": [
+      {
+        "label": "Product",
+        "value": "Colour Sharpener"
+      },
+      {
+        "label": "Quantity",
+        "value": "50 Pieces per Box"
+      }
+    ],
+    "features": [
+      "Attractive assorted colours",
+      "Smooth and easy pencil sharpening",
+      "Compact and easy-to-use design",
+      "Suitable for school, college and office use",
+      "Ideal for students, teachers and stationery shops"
+    ],
+    "images": [
+      "/products/sharpeners/dux-colour-sharpener/01.jpeg",
+      "/products/sharpeners/dux-colour-sharpener/02.jpeg",
+      "/products/sharpeners/dux-colour-sharpener/03.jpeg"
+    ],
+    "source": "Products/Sharpners/Dux/dux.txt"
+  },
+  {
+    "id": "oro-8-inch-scale",
+    "title": "Oro 8-Inch Scale",
+    "name": "Oro 8-Inch Scale",
+    "brand": null,
+    "category": "scales",
+    "price": 50,
+    "priceNote": "per pcs",
+    "description": [
+      "Oro 8-Inch Scale is a durable and lightweight measuring ruler, ideal for everyday school, office, and stationery use."
+    ],
+    "specs": [],
+    "features": [
+      "8-inch measuring scale.",
+      "Clear and easy-to-read markings.",
+      "Lightweight and easy to carry.",
+      "Durable plastic construction.",
+      "Suitable for drawing straight lines and measuring.",
+      "Ideal for students, teachers, and office use."
+    ],
+    "images": [
+      "/products/scales/oro-8-inch-scale/01.jpeg",
+      "/products/scales/oro-8-inch-scale/02.jpeg",
+      "/products/scales/oro-8-inch-scale/03.jpeg"
+    ],
+    "source": "Products/scales/oro/oro.txt"
+  },
+  {
+    "id": "oro-coco-bear-geometry-box",
+    "title": "Oro Coco Bear Geometry Box",
+    "name": "Oro Coco Bear Geometry Box",
+    "brand": null,
+    "category": "geometry",
+    "price": 250,
+    "priceNote": null,
+    "description": [],
+    "specs": [],
+    "features": [
+      "Attractive Coco Bear design",
+      "Includes essential geometry instruments",
+      "Ideal for school mathematics and geometry work",
+      "Durable and easy-to-carry box",
+      "Suitable for students’ everyday use"
+    ],
+    "images": [
+      "/products/geometry/oro-coco-bear-geometry-box/01.jpeg",
+      "/products/geometry/oro-coco-bear-geometry-box/02.jpeg",
+      "/products/geometry/oro-coco-bear-geometry-box/03.jpeg",
+      "/products/geometry/oro-coco-bear-geometry-box/04.jpeg"
+    ],
+    "source": "Products/Geometry/Oro Coco Bear Geometry Box/Oro Coco Bear Geometry Box.txt"
+  },
+  {
+    "id": "oro-gr-7-gel-pen",
+    "title": "Oro GR-7 Gel Pen",
+    "name": "Oro GR-7 Gel Pen",
+    "brand": null,
+    "category": "pens",
+    "price": 120,
+    "priceNote": null,
+    "description": [
+      "Available clrs blck blue green"
+    ],
+    "specs": [],
+    "features": [
+      "Smooth gel ink for effortless writing",
+      "Comfortable grip for better control",
+      "Neat and consistent writing performance",
+      "Ideal for school, office and everyday use"
+    ],
+    "images": [
+      "/products/pens/oro-gr-7-gel-pen/01.jpeg",
+      "/products/pens/oro-gr-7-gel-pen/02.jpeg",
+      "/products/pens/oro-gr-7-gel-pen/03.jpeg",
+      "/products/pens/oro-gr-7-gel-pen/04.jpeg",
+      "/products/pens/oro-gr-7-gel-pen/05.jpeg"
+    ],
+    "source": "Products/pens/Oro GR-7 Gel Pen/Oro GR-7 Gel Pen.txt"
+  },
+  {
+    "id": "oro-gt-5-gel-pen",
+    "title": "Oro GT-5 Gel Pen",
+    "name": "Oro GT-5 Gel Pen",
+    "brand": null,
+    "category": "pens",
+    "price": 100,
+    "priceNote": null,
+    "description": [
+      "Available clrs blck blue"
+    ],
+    "specs": [],
+    "features": [
+      "Smooth and consistent ink flow",
+      "Comfortable grip for effortless writing",
+      "Fine and neat writing experience",
+      "Ideal for students, office and everyday use"
+    ],
+    "images": [
+      "/products/pens/oro-gt-5-gel-pen/01.jpeg",
+      "/products/pens/oro-gt-5-gel-pen/02.jpeg",
+      "/products/pens/oro-gt-5-gel-pen/03.jpeg",
+      "/products/pens/oro-gt-5-gel-pen/04.jpeg",
+      "/products/pens/oro-gt-5-gel-pen/05.jpeg"
+    ],
+    "source": "Products/pens/Oro GT-5 Gel Pen/Oro GT-5 Gel Pen.txt"
+  },
+  {
+    "id": "oro-inventor-pen",
+    "title": "Oro Inventor Pen",
+    "name": "Oro Inventor Pen",
+    "brand": null,
+    "category": "pens",
+    "price": 50,
+    "priceNote": null,
+    "description": [
+      "Available in four different clrs"
+    ],
+    "specs": [],
+    "features": [
+      "Smooth and consistent writing",
+      "Comfortable grip for easy handling",
+      "Neat and clear writing performance",
+      "Ideal for school, office and everyday use"
+    ],
+    "images": [
+      "/products/pens/oro-inventor-pen/01.jpeg",
+      "/products/pens/oro-inventor-pen/02.jpeg",
+      "/products/pens/oro-inventor-pen/03.jpeg",
+      "/products/pens/oro-inventor-pen/04.jpeg",
+      "/products/pens/oro-inventor-pen/05.jpeg",
+      "/products/pens/oro-inventor-pen/06.jpeg",
+      "/products/pens/oro-inventor-pen/07.jpeg"
+    ],
+    "source": "Products/pens/Oro Inventor Pen/Oro Inventor Pen.txt"
+  },
+  {
+    "id": "oro-kelly-carlos",
+    "title": "Oro Kelly Carlos",
+    "name": "Oro Kelly Carlos",
+    "brand": null,
+    "category": "geometry",
+    "price": 150,
+    "priceNote": null,
+    "description": [],
+    "specs": [],
+    "features": [
+      "Attractive and stylish design",
+      "Lightweight and easy to use",
+      "Ideal for everyday stationery needs",
+      "Suitable for students and school use"
+    ],
+    "images": [
+      "/products/geometry/oro-kelly-carlos/01.jpeg",
+      "/products/geometry/oro-kelly-carlos/02.jpeg",
+      "/products/geometry/oro-kelly-carlos/03.jpeg",
+      "/products/geometry/oro-kelly-carlos/04.jpeg"
+    ],
+    "source": "Products/Geometry/Oro Kelly Carlos/Oro Kelly Carlos.txt"
+  },
+  {
+    "id": "oro-la-bello-mirror-comb-geometry-box",
+    "title": "Oro La Bello Mirror Comb Geometry Box",
+    "name": "Oro La Bello Mirror Comb Geometry Box",
+    "brand": null,
+    "category": "geometry",
+    "price": 380,
+    "priceNote": null,
+    "description": [],
+    "specs": [],
+    "features": [
+      "Attractive and stylish La Bello design",
+      "Includes built-in mirror and comb",
+      "Compact and easy-to-carry box",
+      "Ideal for keeping personal accessories organized",
+      "Perfect for everyday use"
+    ],
+    "images": [
+      "/products/geometry/oro-la-bello-mirror-comb-geometry-box/01.jpeg",
+      "/products/geometry/oro-la-bello-mirror-comb-geometry-box/02.jpeg",
+      "/products/geometry/oro-la-bello-mirror-comb-geometry-box/03.jpeg",
+      "/products/geometry/oro-la-bello-mirror-comb-geometry-box/04.jpeg"
+    ],
+    "source": "Products/Geometry/Oro La Bello Mirror Comb Geometry Box/Oro La Bello Mirror Comb Geometry Box.txt"
+  },
+  {
+    "id": "oro-offyso-eraser",
+    "title": "Oro Offyso Eraser – 48 Pieces Pack",
+    "name": "Oro Offyso Eraser",
+    "brand": "Oro",
+    "category": "erasers",
+    "price": 480,
+    "priceNote": null,
+    "description": [
+      "High-quality Oro Offyso Erasers, specially designed for clean and smooth erasing. They remove pencil marks easily without damaging or tearing paper."
+    ],
+    "specs": [
+      {
+        "label": "Product",
+        "value": "Offyso Eraser"
+      },
+      {
+        "label": "Pack Size",
+        "value": "48 Pieces"
+      }
+    ],
+    "features": [
+      "Smooth and clean erasing",
+      "Gentle on paper",
+      "Ideal for students, schools, offices and everyday use.",
+      "Perfect for school stationery supplies."
+    ],
+    "images": [
+      "/products/erasers/oro-offyso-eraser/01.jpeg",
+      "/products/erasers/oro-offyso-eraser/02.jpeg",
+      "/products/erasers/oro-offyso-eraser/03.jpeg"
+    ],
+    "source": "Products/Erasers/oro/oro.txt"
+  },
+  {
+    "id": "oro-r-6-gel-pen",
+    "title": "Oro R-6 Gel Pen",
+    "name": "Oro R-6 Gel Pen",
+    "brand": null,
+    "category": "pens",
+    "price": 80,
+    "priceNote": null,
+    "description": [
+      "Available in blck blue red green"
+    ],
+    "specs": [],
+    "features": [
+      "Smooth and reliable ink flow",
+      "Comfortable grip for daily writing",
+      "Provides neat and clear writing",
+      "Ideal for students, office and everyday use"
+    ],
+    "images": [
+      "/products/pens/oro-r-6-gel-pen/01.jpeg",
+      "/products/pens/oro-r-6-gel-pen/02.jpeg",
+      "/products/pens/oro-r-6-gel-pen/03.jpeg",
+      "/products/pens/oro-r-6-gel-pen/04.jpeg",
+      "/products/pens/oro-r-6-gel-pen/05.jpeg"
+    ],
+    "source": "Products/pens/Oro R-6 Gel Pen/Oro R-6 Gel Pen.txt"
+  },
+  {
+    "id": "oro-reeko-sharpener",
+    "title": "Oro Reeko Sharpener – 50 Pieces Jar",
+    "name": "Oro Reeko Sharpener",
+    "brand": "Oro",
+    "category": "sharpeners",
+    "price": 500,
+    "priceNote": null,
+    "description": [
+      "Oro Reeko Sharpener comes in a convenient jar containing 50 high-quality sharpeners. Designed for smooth and precise pencil sharpening, it provides a clean and neat pencil point without damaging the lead.",
+      "A perfect stationery essential for students, teachers and everyday use."
+    ],
+    "specs": [
+      {
+        "label": "Model",
+        "value": "Reeko Sharpener"
+      },
+      {
+        "label": "Quantity",
+        "value": "50 Pieces per Jar"
+      }
+    ],
+    "features": [
+      "Smooth and efficient sharpening",
+      "Durable and easy-to-use design",
+      "Ideal for school, college, office and everyday stationery use",
+      "Convenient jar packaging for easy storage"
+    ],
+    "images": [
+      "/products/sharpeners/oro-reeko-sharpener/01.jpeg",
+      "/products/sharpeners/oro-reeko-sharpener/02.jpeg",
+      "/products/sharpeners/oro-reeko-sharpener/03.jpeg",
+      "/products/sharpeners/oro-reeko-sharpener/04.jpeg",
+      "/products/sharpeners/oro-reeko-sharpener/05.jpeg"
+    ],
+    "source": "Products/Sharpners/oro/sharpner.txt"
+  },
+  {
+    "id": "oro-trimetal-lead-pencil",
+    "title": "ORO Trimetal Lead Pencil – 12 Pcs Box",
+    "name": "ORO Trimetal Lead Pencil",
+    "brand": "ORO",
+    "category": "pencils",
+    "price": 250,
+    "priceNote": null,
+    "description": [
+      "Enjoy smooth and comfortable writing with ORO Trimetal HB Lead Pencils. Designed with an attractive metallic finish and ergonomic triangular shape for a comfortable grip. These pencils feature break-resistant lead technology for enhanced durability and consistent writing performance.",
+      "Ideal For: Students, teachers and everyday writing needs."
+    ],
+    "specs": [
+      {
+        "label": "Product Type",
+        "value": "HB Lead Pencil"
+      },
+      {
+        "label": "Quantity",
+        "value": "12 Pencils per Box"
+      }
+    ],
+    "features": [
+      "Metallic Finish",
+      "Comfortable Ergonomic Grip",
+      "Break-Resistant Lead",
+      "Matching Eraser on Each Pencil",
+      "Smooth Writing Experience",
+      "Suitable for School, Office, Drawing and Everyday Use",
+      "Non-Toxic and Environment Friendly"
+    ],
+    "images": [
+      "/products/pencils/oro-trimetal-lead-pencil/01.jpeg",
+      "/products/pencils/oro-trimetal-lead-pencil/02.jpeg",
+      "/products/pencils/oro-trimetal-lead-pencil/03.jpeg"
+    ],
+    "source": "Products/Pencils/oro/oro.txt"
+  },
+  {
+    "id": "oro-tx-7-gel-pen",
+    "title": "Oro TX-7 Gel Pen",
+    "name": "Oro TX-7 Gel Pen",
+    "brand": null,
+    "category": "pens",
+    "price": 150,
+    "priceNote": null,
+    "description": [],
+    "specs": [],
+    "features": [
+      "Smooth gel ink flow",
+      "Comfortable grip for easy writing",
+      "Clear and neat writing",
+      "Ideal for school, office and everyday use"
+    ],
+    "images": [
+      "/products/pens/oro-tx-7-gel-pen/01.jpeg",
+      "/products/pens/oro-tx-7-gel-pen/02.jpeg",
+      "/products/pens/oro-tx-7-gel-pen/03.jpeg",
+      "/products/pens/oro-tx-7-gel-pen/04.jpeg",
+      "/products/pens/oro-tx-7-gel-pen/05.jpeg"
+    ],
+    "source": "Products/pens/Oro TX-7 Gel Pen/Oro TX-7 Gel Pen.txt"
+  },
+  {
+    "id": "oro-veezo-eraser",
+    "title": "Oro Veezo Eraser – 72 Pieces Jar",
+    "name": "Oro Veezo Eraser",
+    "brand": "Oro",
+    "category": "erasers",
+    "price": 450,
+    "priceNote": null,
+    "description": [
+      "Oro Veezo Erasers are designed for smooth and clean erasing. They easily remove pencil marks while keeping paper neat and clean. Packed in a convenient jar containing 72 pieces, making them ideal for stationery shops, schools and everyday use."
+    ],
+    "specs": [
+      {
+        "label": "Product",
+        "value": "Veezo Eraser"
+      },
+      {
+        "label": "Pack Size",
+        "value": "72 Pieces"
+      },
+      {
+        "label": "Packaging",
+        "value": "Convenient Jar"
+      }
+    ],
+    "features": [
+      "Smooth and clean erasing",
+      "Easy to use",
+      "Suitable for students, schools and offices.",
+      "Ideal for everyday stationery needs."
+    ],
+    "images": [
+      "/products/erasers/oro-veezo-eraser/01.jpeg",
+      "/products/erasers/oro-veezo-eraser/02.jpeg",
+      "/products/erasers/oro-veezo-eraser/03.jpeg"
+    ],
+    "source": "Products/Erasers/oro veezo/oro.txt"
+  },
+  {
+    "id": "piano-lead-pencils",
+    "title": "Piano Lead Pencils – 12 Pcs Box",
+    "name": "Piano Lead Pencils",
+    "brand": "Piano",
+    "category": "pencils",
+    "price": 250,
+    "priceNote": null,
+    "description": [
+      "Piano Lead Pencils are ideal for everyday writing, drawing and schoolwork. Designed for smooth and comfortable writing, they are suitable for students, teachers and office use.",
+      "A reliable choice for everyday writing needs!"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Lead Pencils"
+      },
+      {
+        "label": "Quantity",
+        "value": "12 Pencils per Box"
+      }
+    ],
+    "features": [
+      "Smooth writing performance",
+      "Ideal for writing, drawing and sketching",
+      "Suitable for school, home and office use"
+    ],
+    "images": [
+      "/products/pencils/piano-lead-pencils/01.jpeg",
+      "/products/pencils/piano-lead-pencils/02.jpeg",
+      "/products/pencils/piano-lead-pencils/03.jpeg",
+      "/products/pencils/piano-lead-pencils/04.jpeg"
+    ],
+    "source": "Products/Pencils/piano/piano.txt"
+  }
+]

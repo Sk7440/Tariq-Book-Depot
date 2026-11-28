@@ -1,0 +1,100 @@
+[
+  {
+    "slug": "pencils",
+    "name": {
+      "en": "Pencils",
+      "ur": "پنسلیں"
+    },
+    "departments": [
+      "stationery"
+    ],
+    "order": 1,
+    "aliases": []
+  },
+  {
+    "slug": "erasers",
+    "name": {
+      "en": "Erasers",
+      "ur": "ربڑ"
+    },
+    "departments": [
+      "stationery"
+    ],
+    "order": 2,
+    "aliases": []
+  },
+  {
+    "slug": "sharpeners",
+    "name": {
+      "en": "Sharpeners",
+      "ur": "شارپنر"
+    },
+    "departments": [
+      "stationery"
+    ],
+    "order": 3,
+    "aliases": [
+      "Sharpners"
+    ]
+  },
+  {
+    "slug": "scales",
+    "name": {
+      "en": "Scales",
+      "ur": "اسکیل"
+    },
+    "departments": [
+      "stationery"
+    ],
+    "order": 4,
+    "aliases": []
+  },
+  {
+    "slug": "paper",
+    "name": {
+      "en": "Paper",
+      "ur": "کاغذ"
+    },
+    "departments": [
+      "paper",
+      "office"
+    ],
+    "order": 5,
+    "aliases": [
+      "Blc",
+      "copymate"
+    ]
+  },
+  {
+    "slug": "books",
+    "name": {
+      "en": "Books",
+      "ur": "کتابیں"
+    },
+    "departments": [
+      "books"
+    ],
+    "order": 6,
+    "aliases": []
+  },
+  {
+    "slug": "geometry",
+    "name": {
+      "en": "Geometry",
+      "ur": null
+    },
+    "departments": [],
+    "order": 7,
+    "aliases": []
+  },
+  {
+    "slug": "pens",
+    "name": {
+      "en": "Pens",
+      "ur": null
+    },
+    "departments": [],
+    "order": 8,
+    "aliases": []
+  }
+]

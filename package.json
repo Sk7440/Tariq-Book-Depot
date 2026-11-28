@@ -10,7 +10,16 @@
   "scripts": {
     "dev:storefront": "npm --workspace apps/storefront run dev",
     "build:storefront": "npm --workspace apps/storefront run build",
-    "typecheck": "npm --workspace apps/storefront run typecheck",
-    "lint": "npm --workspace apps/storefront run lint"
+    "typecheck": "npm --workspace apps/storefront run typecheck && tsc -p scripts",
+    "lint": "npm --workspace apps/storefront run lint",
+    "products:sync": "tsx scripts/sync-products.ts",
+    "products:check": "tsx scripts/sync-products.ts --check",
+    "test:unit": "tsx --test --experimental-test-coverage scripts/lib/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.5",
+    "tsx": "4.23.15",
+    "typescript": "5.7.2",
+    "zod": "4.6.7"
   }
 }
