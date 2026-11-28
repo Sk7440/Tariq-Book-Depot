@@ -29,5 +29,8 @@
     "postcss": "8.5.34",
     "tailwindcss": "4.3.5",
     "typescript": "5.7.2"
+  },
+  "engines": {
+    "node": "22.x"
   }
 }

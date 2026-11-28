@@ -228,13 +228,35 @@ function report(plan: Plan, d: Diff, check: boolean): string {
   ].join("\n");
 }
 
+/**
+ * Linux-style check: every image path in products.json is lowercase and exists with exactly that case.
+ * Walks directory listings because existsSync is case-insensitive on Windows and macOS.
+ */
+function caseSensitiveImageProblems(products: readonly Product[]): string[] {
+  const publicRoot = dirname(PUBLIC_DIR);
+  return products.flatMap((p) =>
+    p.images.flatMap((img) => {
+      if (img !== img.toLowerCase()) return [`${p.id}: not lowercase: ${img}`];
+      let dir = publicRoot;
+      for (const segment of img.split("/").filter(Boolean)) {
+        if (!existsSync(dir) || !readdirSync(dir).includes(segment)) return [`${p.id}: missing (exact case): ${img}`];
+        dir = join(dir, segment);
+      }
+      return [];
+    }),
+  );
+}
+
 function main(): void {
   const check = process.argv.includes("--check");
   const plan = makePlan();
   const d = diff(plan);
   if (!check) apply(plan, d);
   process.stdout.write(`${report(plan, d, check)}\n`);
-  const dirty = d.stale.length + d.missing.length + d.changed.length + d.jsonChanged.length;
+  const caseProblems = caseSensitiveImageProblems(plan.products);
+  const imageCount = plan.products.reduce((n, p) => n + p.images.length, 0);
+  process.stdout.write(`${section(`Case-sensitive image check (${imageCount} paths)`, caseProblems)}\n`);
+  const dirty = d.stale.length + d.missing.length + d.changed.length + d.jsonChanged.length + caseProblems.length;
   if (check && dirty) {
     process.stderr.write(`\nproducts:check FAILED — ${dirty} output(s) differ from Products/. Run npm run products:sync and commit.\n`);
     process.exit(1);

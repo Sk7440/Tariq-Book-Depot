@@ -90,6 +90,16 @@ See `Products/_TEMPLATE.txt`. Create `Products/<Category>/<Product name>/`, add 
 
 ## Commands (from the repo root)
 
-- `npm run dev:storefront`: dev server on port 8000.
-- `npm run typecheck` · `npm run lint` · `npm run build:storefront`
-- `npm run products:sync` · `npm run products:check` *(added in Phase 2)*
+- `npm run dev:storefront`: dev server on port 8000 (`/` → `/en`; Urdu at `/ur`).
+- `npm run typecheck` (storefront + scripts) · `npm run lint` · `npm run build:storefront`
+- `npm run test:unit`: parser, order and filter tests with coverage.
+- `npm run products:sync` · `npm run products:check` (also checks image paths case-sensitively).
+- `npm run test:e2e`: Playwright. It builds into `.next-e2e` with `NEXT_PUBLIC_E2E_WHATSAPP` (a fake test number). Production never sets this variable.
+
+## Routing and code map
+
+- Pages live under `src/app/[lang]/` (`en` | `ur`, static). Unknown paths outside `/en` and `/ur` use `src/app/global-not-found.tsx` (`experimental.globalNotFound`).
+- UI strings: `src/i18n/dictionaries.ts`, generated from the HTML's `T` object plus four WhatsApp strings (see OPEN_QUESTIONS.md).
+- CSS: `src/styles/*.css`, ported verbatim from the HTML and layered under Tailwind v4.
+- Orders: `src/lib/order.ts` (pure, tested) → `src/lib/order-sink.ts` (`OrderSink`, WhatsApp) → `src/lib/order-storage.ts` (sessionStorage).
+- Client components never import `src/lib/catalog.ts`, which bundles all catalogue JSON; they use `src/lib/format.ts` and `ClientProduct`.
