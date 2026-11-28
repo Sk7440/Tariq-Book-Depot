@@ -83,6 +83,8 @@ export const OverrideSchema = z.strictObject({
   homeSection: HomeSectionSchema.nullable().optional(),
   bestSeller: z.boolean().optional(),
   offerPrice: z.number().int().positive().nullable().optional(),
+  /** Owner-confirmed brand when the .txt has no `* Brand:` line. */
+  brand: z.string().min(1).optional(),
   unit: UnitSchema.nullable().optional(),
   /** Source photo file names in display order; the first is the cover. Applied by products:sync. */
   imageOrder: z.array(z.string().min(1)).optional(),

@@ -44,6 +44,7 @@ const catalog: readonly CatalogProduct[] = products
     const o = overrides[p.id] ?? {};
     return {
       ...p,
+      brand: o.brand ?? p.brand,
       sort: o.sort ?? 0,
       homeSection: o.homeSection ?? null,
       bestSeller: o.bestSeller ?? false,

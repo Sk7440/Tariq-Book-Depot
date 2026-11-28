@@ -115,7 +115,10 @@ function buildProduct(folder: ProductFolder, overrides: Overrides, plan: Plan, s
   const p = parsed.value;
   const id = toKebab(p.name);
   if (!id) return skip(`name "${p.name}" gives an empty id`);
-  p.notes.forEach((note) => plan.notes.push({ id, note }));
+  const brandOverride = overrides[id]?.brand;
+  p.notes
+    .map((note) => (brandOverride && note.startsWith("no Brand:") ? `no Brand: bullet; brand "${brandOverride}" set in overrides.json` : note))
+    .forEach((note) => plan.notes.push({ id, note }));
 
   const paths: string[] = [];
   const hashes = new Set<string>();
