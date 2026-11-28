@@ -3,6 +3,8 @@ import { LANGS, type Lang } from "../src/i18n/config";
 import { pick, t } from "../src/i18n/t";
 import categories from "../src/data/categories.json";
 import { E2E_WHATSAPP } from "../playwright.config";
+import { STORE } from "../src/config/store";
+import { formatPrice } from "../src/lib/format";
 
 const ERASER = { id: "oro-veezo-eraser", name: "Oro Veezo Eraser", price: 450 };
 const PENCILS = { id: "piano-lead-pencils", name: "Piano Lead Pencils", price: 250 };
@@ -72,8 +74,10 @@ for (const lang of LANGS) {
       await page.getByLabel(t(lang, "fCity"), { exact: true }).fill(CUSTOMER.city);
       await page.getByLabel(t(lang, "fNotes"), { exact: true }).fill(CUSTOMER.notes);
 
-      const total = ERASER.price + PENCILS.price * 2;
-      await expect(page.locator(".co__side [data-testid=order-total]")).toHaveText(`Rs ${total}`);
+      // Local delivery is selected by default; its rate comes from store.ts (null → not added).
+      const localRate = STORE.delivery.find((d) => d.id === "local")?.price ?? null;
+      const total = ERASER.price + PENCILS.price * 2 + (localRate ?? 0);
+      await expect(page.locator(".co__side [data-testid=order-total]")).toHaveText(formatPrice(total));
 
       const popupPromise = page.context().waitForEvent("page");
       await page.getByTestId("place-order").click();
@@ -81,11 +85,13 @@ for (const lang of LANGS) {
       await popup.waitForLoadState("domcontentloaded");
       const url = new URL(popup.url());
 
-      expect(url.origin + url.pathname).toBe(`https://wa.me/${E2E_WHATSAPP}`);
+      // The shop's number when configured, otherwise the e2e-only test number.
+      expect(url.origin + url.pathname).toBe(`https://wa.me/${STORE.whatsapp ?? E2E_WHATSAPP}`);
       const text = url.searchParams.get("text") ?? "";
       expect(text).toContain(`${ERASER.name} (72 Pieces Jar) x 1 @ Rs 450 = Rs 450`);
       expect(text).toContain(`${PENCILS.name} (12 Pcs Box) x 2 @ Rs 250 = Rs 500`);
-      expect(text).toContain(`Total: Rs ${total}`);
+      expect(text).toContain(`Total: ${formatPrice(total)}${localRate === null ? " + delivery" : ""}`);
+      if (localRate !== null) expect(text).toContain(`: ${formatPrice(localRate)}`);
       for (const value of Object.values(CUSTOMER)) expect(text).toContain(value);
       expect(text).toContain("Payment: Cash on delivery");
       await popup.close();
