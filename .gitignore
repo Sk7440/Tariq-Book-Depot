@@ -2,12 +2,11 @@ node_modules/
 .next/
 dist/
 coverage/
+*.log
+*.tsbuildinfo
 .env
 .env.local
 .env.*.local
-!.env.example
-*.log
-.next/
-apps/*/.next/
-apps/*/dist/
-*.tsbuildinfo
+test-results/
+playwright-report/
+playwright/.cache/
