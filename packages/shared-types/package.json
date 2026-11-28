@@ -1,8 +1,0 @@
-{
-  "name": "@tariq-book-depot/shared-types",
-  "private": true,
-  "version": "0.1.0",
-  "exports": {
-    ".": "./src/index.ts"
-  }
-}
