@@ -1,0 +1,14 @@
+Product Title – Short Detail | Pack Size
+
+First paragraph of the description. Write it in plain sentences.
+
+Optional second paragraph.
+
+Features:
+
+* Brand: Brand Name
+* Pack Size: 12 Pieces
+* A feature written as a short phrase
+* Another feature
+
+RS 450
