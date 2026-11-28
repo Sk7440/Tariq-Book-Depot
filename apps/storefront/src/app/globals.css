@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* The HTML's own CSS, layered so Tailwind utilities can still override it. */
+@import "../styles/tokens.css" layer(base);
+@import "../styles/base.css" layer(base);
+@import "../styles/chrome.css" layer(components);
+@import "../styles/home.css" layer(components);
+@import "../styles/pages.css" layer(components);
+
+/* Expose the HTML tokens to Tailwind utilities (bg-navy, text-ink-3, font-serif …). */
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-hi: var(--paper-hi);
+  --color-tile: var(--tile);
+  --color-card: var(--card);
+  --color-navy: var(--navy);
+  --color-navy-hover: var(--navy-hover);
+  --color-navy-tint: var(--navy-tint);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+  --color-field: var(--field);
+  --color-margin: var(--margin);
+  --color-error: var(--error);
+  --color-gold: var(--gold);
+  --color-gold-ink: var(--gold-ink);
+  --font-serif: var(--serif);
+  --font-sans: var(--sans);
+  --font-urdu: var(--urdu);
+}

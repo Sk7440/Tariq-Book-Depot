@@ -12,6 +12,8 @@ import {
   type Unit,
 } from "@/lib/catalog-schema";
 import type * as z from "zod";
+import { DEPARTMENT_LIST } from "@/lib/departments";
+import { packOf } from "@/lib/format";
 
 /** A product merged with its owner overrides. Prices always come from here. */
 export interface CatalogProduct extends Product {
@@ -71,11 +73,42 @@ export function getCategory(slug: string): Category | undefined {
   return categories.find((c) => c.slug === slug);
 }
 
-/** The price a customer pays: the offer price when set, otherwise the list price. */
-export function priceOf(product: Pick<CatalogProduct, "price" | "offerPrice">): number {
-  return product.offerPrice ?? product.price;
+export { formatPrice, packOf, priceOf } from "@/lib/format";
+
+export function productsIn(categorySlug: string): readonly CatalogProduct[] {
+  return catalog.filter((p) => p.category === categorySlug);
 }
 
-export function formatPrice(rupees: number): string {
-  return `Rs ${rupees.toLocaleString("en-PK")}`;
+/** App path (without language) for a category: its first department with ?cat=, else All products. */
+export function categoryPath(category: Category): string {
+  if (category.slug === "books") return "/shop/books";
+  const dept = category.departments[0];
+  return dept ? `/shop/${dept}?cat=${category.slug}` : `/shop?cat=${category.slug}`;
+}
+
+/** Slim product shape sent to client components (search, cart). */
+export interface ClientProduct {
+  id: string;
+  name: string;
+  brand: string | null;
+  pack: string | null;
+  priceNote: string | null;
+  price: number;
+  offerPrice: number | null;
+  unit: CatalogProduct["unit"];
+  image: string;
+  /** Lower-cased text the header search matches against. */
+  haystack: string;
+}
+
+export function toClientProducts(): ClientProduct[] {
+  return catalog.map((p) => {
+    const cat = getCategory(p.category);
+    const pack = packOf(p);
+    const hay = [p.name, p.brand, pack, cat?.name.en, cat?.name.ur, ...p.description, ...(cat?.departments ?? []).map((d) => DEPARTMENT_LIST.find((x) => x.id === d)?.name.en)]
+      .filter((x): x is string => Boolean(x))
+      .join(" ")
+      .toLowerCase();
+    return { id: p.id, name: p.name, brand: p.brand, pack, priceNote: p.priceNote, price: p.price, offerPrice: p.offerPrice, unit: p.unit, image: p.images[0], haystack: hay };
+  });
 }

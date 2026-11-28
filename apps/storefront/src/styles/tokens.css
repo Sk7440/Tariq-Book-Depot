@@ -1,0 +1,27 @@
+/* Ported verbatim from references/tariq-book-depot.html (design tokens, lines 19–44). Edit with care: the HTML is the approved design. */
+:root{
+  --paper:#F7F7F2;
+  --paper-hi:#FCFCF9;
+  --tile:#EDEDE6;
+  --card:#FFFFFF;
+  --navy:#0B2349;
+  --navy-hover:#1A386C;
+  --navy-tint:#E5EAF3;
+  --ink:#1C1C1E;
+  --ink-2:#44454C;
+  --ink-3:#64666E;
+  --rule:#BCCFEB;
+  --rule-strong:#8EA8D2;
+  --field:#7A8397;
+  --margin:#D0443F;
+  --error:#B3261E;
+  --gold:#B38C57;
+  --gold-ink:#76561F;
+  --line:32px;
+  --wrap:min(1180px, calc(100% - 48px));
+  --serif:var(--font-newsreader), "Newsreader", Georgia, "Times New Roman", serif;
+  --sans:var(--font-jakarta), "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --urdu:var(--font-nastaliq), "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Urdu Typesetting", serif;
+  --hdr-h:0px;
+}
+@media (max-width:720px){ :root{ --line:28px; --wrap:calc(100% - 32px); } }

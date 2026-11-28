@@ -7,5 +7,29 @@
   },
   "oro-r-6-gel-pen": {
     "brand": "Oro"
+  },
+  "oro-trimetal-lead-pencil": {
+    "homeSection": "stationery"
+  },
+  "oro-veezo-eraser": {
+    "homeSection": "stationery"
+  },
+  "dux-colour-sharpener": {
+    "homeSection": "stationery"
+  },
+  "dux-12-inch-scale": {
+    "homeSection": "stationery"
+  },
+  "piano-lead-pencils": {
+    "homeSection": "new"
+  },
+  "oro-reeko-sharpener": {
+    "homeSection": "new"
+  },
+  "copy-mate-a4-paper": {
+    "homeSection": "new"
+  },
+  "blc-paper-rim": {
+    "homeSection": "new"
   }
 }
