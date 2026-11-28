@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@/components/icons";
@@ -37,7 +38,14 @@ export function CartLineItem({ lang, line, isEditable = true, onNavigate }: Cart
   };
 
   return (
-    <li className="line" data-line={p.id}>
+    <motion.li
+      className="line"
+      data-line={p.id}
+      layout="position"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, height: 0, paddingBlock: 0, overflow: "hidden", transition: { duration: 0.25 } }}
+    >
       <Link href={productHref} tabIndex={-1} aria-hidden="true" onClick={onNavigate}>
         <Image className="line__img is-cut" src={p.image} alt="" width={76} height={76} />
       </Link>
@@ -72,7 +80,7 @@ export function CartLineItem({ lang, line, isEditable = true, onNavigate }: Cart
         )}
       </div>
       <span className="price line__total" lang="en">{formatPrice(line.total)}</span>
-    </li>
+    </motion.li>
   );
 }
 

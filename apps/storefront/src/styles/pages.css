@@ -181,3 +181,6 @@ html[lang="ur"] .faq summary{ font-family:var(--urdu); font-size:17px; }
   body{ background:#fff; }
   .receipt{ box-shadow:none; border:0; }
 }
+
+/* Added for the React port: Motion wraps each shop card for layout reflow; the card fills its wrapper. */
+[data-grid] > div > .card{ flex:1 1 auto; }

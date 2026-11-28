@@ -14,7 +14,8 @@
     "lint": "npm --workspace apps/storefront run lint",
     "products:sync": "tsx scripts/sync-products.ts",
     "products:check": "tsx scripts/sync-products.ts --check",
-    "test:unit": "tsx --test --experimental-test-coverage scripts/lib/*.test.ts"
+    "test:unit": "tsx --test --experimental-test-coverage scripts/lib/*.test.ts apps/storefront/src/lib/*.test.ts",
+    "test:e2e": "npm --workspace apps/storefront run test:e2e"
   },
   "devDependencies": {
     "@types/node": "22.10.5",

@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import type { ReactNode } from "react";
@@ -83,7 +84,21 @@ export function ShopBrowserView({ lang, title, base, categories, tabs, empty, fi
             </div>
           </div>
           <div className="grid" data-grid>
-            {visible.map((p) => <ProductCard key={p.id} lang={lang} product={p} />)}
+            <AnimatePresence mode="popLayout" initial={false}>
+              {visible.map((p) => (
+                <motion.div
+                  key={p.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.94 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.94, transition: { duration: 0.25 } }}
+                  transition={{ duration: 0.45, ease: [0.45, 0, 0.55, 1] }}
+                  style={{ display: "flex", minWidth: 0 }}
+                >
+                  <ProductCard lang={lang} product={p} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
           {visible.length === 0 && (
             <div className="note-empty">

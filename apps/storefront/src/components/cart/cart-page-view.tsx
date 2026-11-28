@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence } from "motion/react";
 import Link from "next/link";
 import { href, type Lang } from "@/i18n/config";
 import { t } from "@/i18n/t";
@@ -15,7 +16,9 @@ export function CartPageView({ lang }: { lang: Lang }) {
   return (
     <div className="cartpage">
       <ul className="lines">
-        {lines.map((l) => <CartLineItem key={l.id} lang={lang} line={l} />)}
+        <AnimatePresence initial={false}>
+          {lines.map((l) => <CartLineItem key={l.id} lang={lang} line={l} />)}
+        </AnimatePresence>
       </ul>
       <aside className="summary" aria-labelledby="sum-t">
         <h2 className="summary__t" id="sum-t">{t(lang, "orderSummary")}</h2>

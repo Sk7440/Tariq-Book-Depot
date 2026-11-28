@@ -6,6 +6,7 @@ import { CartProvider } from "@/components/cart/cart-provider";
 import { LiveRegion } from "@/components/chrome/live-region";
 import { SiteFooter } from "@/components/chrome/site-footer";
 import { SiteHeader } from "@/components/chrome/site-header";
+import { MotionRoot } from "@/components/motion/motion-root";
 import { STORE } from "@/config/store";
 import { dirOf, isLang, LANGS } from "@/i18n/config";
 import { t } from "@/i18n/t";
@@ -57,12 +58,14 @@ export default async function LangLayout({ children, params }: LangLayoutProps) 
     <html lang={lang} dir={dirOf(lang)} className={fontVariables}>
       <body>
         <a className="skip" href="#main">{t(lang, "skip")}</a>
+        <MotionRoot>
         <CartProvider products={clientProducts}>
           <SiteHeader lang={lang} products={clientProducts} />
           <CartDrawer lang={lang} />
           <main id="main" tabIndex={-1}>{children}</main>
           <SiteFooter lang={lang} />
         </CartProvider>
+        </MotionRoot>
         <LiveRegion />
       </body>
     </html>

@@ -21,7 +21,7 @@ export function Hero({ lang }: { lang: Lang }) {
   });
 
   return (
-    <section className="hero" aria-labelledby="hero-title" data-hero>
+    <HeroMotion lang={lang}>
       <div className="hero__rules" aria-hidden="true" />
       <div className="wrap hero__inner">
         <div className="hero__margin" aria-hidden="true" />
@@ -51,8 +51,7 @@ export function Hero({ lang }: { lang: Lang }) {
           ))}
         </div>
       </div>
-      <HeroMotion lang={lang} />
-    </section>
+    </HeroMotion>
   );
 }
 

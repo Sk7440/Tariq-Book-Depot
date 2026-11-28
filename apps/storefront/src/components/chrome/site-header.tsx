@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useState, type MouseEvent } from "react";
+import { CartCount } from "@/components/cart/cart-count";
 import { useCart } from "@/components/cart/cart-provider";
 import { Icon } from "@/components/icons";
 import { STORE } from "@/config/store";
@@ -62,7 +63,7 @@ export function SiteHeader({ lang, products }: SiteHeaderProps) {
           <button className="iconbtn cartbtn" type="button" aria-controls="cart" aria-expanded={isDrawerOpen} onClick={openDrawer}>
             <Icon name="bag" />
             <span className="cartbtn__label">{t(lang, "cart")}</span>
-            <span className="cartbtn__count" aria-hidden="true" data-empty={shownCount === 0 ? "" : undefined}>{shownCount}</span>
+            <CartCount count={shownCount} />
             <span className="sr-only">{t(lang, "cartItems", { n: shownCount })}</span>
           </button>
         </div>
